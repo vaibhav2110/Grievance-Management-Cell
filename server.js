@@ -1,11 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 
 const users = require('./routes/api/users');
 const grievances = require('./routes/api/grievances');
 
 const app = express();
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -15,9 +17,9 @@ mongoose.connect(db)
     .then(()=>console.log('Database connected'))
     .catch(err=>console.log(err));
 
-app.get('/',(req, res)=>{
-    res.send('Hello');
-});
+app.use(passport.initialize());
+
+require('./config/passport')(passport);
 
 app.use('/api/users', users);
 app.use('/api/grievances', grievances);
