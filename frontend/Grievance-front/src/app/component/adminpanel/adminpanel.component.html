@@ -1,0 +1,96 @@
+<div class="wrapper">
+    <div class="sidebar" data-image="../../../assets/img/sidebar-5.jpg">
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text">
+                    Admin Panel
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li class="notClicked active">
+                    <a (click)="setPage('dashboard')">
+                        <i class="fa fa-dashcube"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="notClicked">
+                    <a (click)="setPage('grievances')">
+                        <i class="fa fa-comment"></i>
+                        <p>Grievances</p>
+                    </a>
+                </li>
+                <li class="notClicked">
+                    <a (click)="setPage('new_users')">
+                        <i class="fa fa-user"></i>
+                        <p>New Users</p>
+                    </a>
+                </li>
+                <li class="notClicked">
+                    <a (click)="setPage('all_users')">
+                        <i class="fa fa-list-ul"></i>
+                        <p>All Users</p>
+                    </a>
+                </li>
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+        <nav class="navbar navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3" (click)="toggleCollapsed()">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Dashboard</a>
+                </div>
+                <div class="collapse navbar-collapse" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}"  id="navbar-collapse-3">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<p class="hidden-lg hidden-md">Dashboard</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a (click)="logout()">
+                                <p><i class="fa fa-power-off"></i> Log out</p>
+                            </a>
+                        </li>
+						<li class="separator hidden-lg"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="content" style="background: #2B343A" *ngIf="users && grievances">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12" [ngSwitch]="page">
+                        <app-dashboard *ngSwitchCase="'dashboard'" [grievances]="grievances" [users]="users"></app-dashboard>
+                        <app-adminnewusers [users]="users" *ngSwitchCase="'new_users'"></app-adminnewusers>
+                        <app-adminallusers [users]="users" *ngSwitchCase="'all_users'"></app-adminallusers>
+                        <app-admingrievances [grievances]="grievances" *ngSwitchCase="'grievances'"></app-admingrievances>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<app-dashboard></app-dashboard>

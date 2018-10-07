@@ -1,0 +1,62 @@
+<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+					<div class="table">
+
+						<div class="row my_row header">
+                            <div class="cell">
+								Date
+							</div>
+							<div class="cell">
+								Student
+							</div>
+							<div class="cell">
+								Subject
+							</div>
+                            <div class="cell">
+								Grievance
+							</div>
+                            <div class="cell">
+								Action
+							</div>
+						</div>
+
+						<div *ngFor="let grievance of grievances" class="row">
+                            <div class="cell" data-title="Subject">
+								{{grievance.date | date:'short'}}
+							</div>
+							<div class="cell" data-title="Student">
+								{{grievance.user.name}}<br>
+                                <span>{{grievance.user.roll}}</span>
+							</div>
+							<div class="cell" data-title="Subject">
+								{{grievance.subject}}
+							</div>
+							<div class="cell" data-title="Grievance">
+								{{grievance.message}}
+							</div>
+                            <div class="cell" data-title="Action">
+								<button *ngIf="grievance.response.length==0" class="assign" (click)="clicked(grievance)">Reply</button>
+                                <button [disabled]="true" *ngIf="grievance.response.length>0" class="assign">Responded</button>
+							</div>
+                            <div id="myModal" class="modal">
+
+                              <!-- Modal content -->
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <span class="close" (click)="close()">&times;</span>
+                                      <h2>Sending Response to {{title}}</h2>
+                                  </div>
+                                  <div class="modal-body">
+                                      <div class="content">
+                                          <textarea row="10" type="text" class="formControl" [(ngModel)]="response"></textarea>
+                                          <button class="assign submit" (click)="submit(grievance)">Submit</button>
+                                      </div>
+                                  </div>
+                                
+                              </div>
+                        </div>
+					</div>
+			</div>
+		</div>
+	</div>

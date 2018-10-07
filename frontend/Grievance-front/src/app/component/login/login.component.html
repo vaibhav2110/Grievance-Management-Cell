@@ -1,0 +1,20 @@
+    <div class="animated fadeIn delay-3 c_form">
+        <div class="header">
+            <h3>LOG IN</h3>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div>
+                <label>Roll No.</label>
+                <input class="formControl" type="text" formControlName="roll" placeholder="Enter Roll Number">
+                <p class="error" *ngIf="user_error">*{{errMess}}</p>
+            </div>
+            <div>
+                <label>Password</label>
+                <input class="formControl" type="password" formControlName="password" placeholder="Enter Password">
+                <p class="error" *ngIf="password_error">*{{errMess}}</p>
+            </div>
+            <button [disabled]="!loginForm.valid" *ngIf="!loading" class="my_btn" type="submit" >SUBMIT</button>
+            <button *ngIf="loading" class="loading" ><fa style="color: white" name="spinner" animation="spin"></fa> LOADING</button>
+        </form>
+        <p class="reg">Create new account. <a (click)="signup()">Sign Up</a></p>
+    </div>

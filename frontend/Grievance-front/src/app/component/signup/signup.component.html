@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="container">
+<div class="animated fadeIn delay-3 c_form">
+        <div class="header">
+            <h3>SIGN IN</h3>
+        </div>
+        <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+            <div>
+                <label>Name</label>
+                <input class="formControl" type="text" formControlName="name" placeholder="Enter your name">
+                <p class="error" *ngIf="signinForm.get('name').hasError('required') && signinForm.get('name').touched">*Name is required</p>
+            </div>
+            <div>
+                <label>Roll No.</label>
+                <input class="formControl" type="text" formControlName="roll" placeholder="Enter Roll Number">
+                <p class="error" *ngIf="errMess">*{{errMess}}</p>
+                <p class="error" *ngIf="signinForm.get('roll').hasError('required') && signinForm.get('roll').touched">*Roll No. is required</p>
+            </div>
+            <div>
+                <label>Email</label>
+                <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="formControl" type="email" formControlName="email" placeholder="Enter your email">
+                <p class="error" *ngIf="signinForm.get('email').hasError('required') && signinForm.get('email').touched">*Email is required</p>
+                <p class="error" *ngIf="signinForm.get('email').hasError('pattern') && signinForm.get('email').touched">*Incorrect email</p>
+            </div>
+            <div>
+                <label>Phone</label>
+                <input class="formControl" type="number" formControlName="phone" placeholder="Enter Phone Number">
+                <p class="error" *ngIf="signinForm.get('phone').hasError('required') && signinForm.get('phone').touched">*Phone No. is required</p>
+            </div>
+            <button  [disabled]="!signinForm.valid" *ngIf="!loading" class="my_btn" type="submit" >SUBMIT</button>
+            <button *ngIf="loading" class="my_btn" ><fa style="color: white" name="spinner" animation="spin"></fa> LOADING</button>
+        </form>
+    </div>
+    <div class="success">
+    <div class="trigger"></div>
+<svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+<path class="circ path" style="fill:none;stroke:#11998e;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" d="
+	M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
+	/>
+<polyline class="tick path" style="fill:none;stroke:#11998e;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+	11.6,20 15.9,24.2 26.4,13.8 "/>
+</svg>
+    <h1 style="opacity: 0">.</h1>
+</div>
+</div>

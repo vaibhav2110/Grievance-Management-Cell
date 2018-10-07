@@ -1,0 +1,22 @@
+<div *ngIf="!grievances && !users" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+<div *ngIf="users && grievances">
+    <div class="row">
+        <div class="col-sm-3 col-xs-6 card">
+            <i class="fa fa-user"></i>
+            <div class="text">
+                <h4>{{users.length}}</h4>
+                <p>Users</p>
+            </div>
+            
+        </div>
+        <div class="col-sm-3 col-xs-6 card">
+            <i class="fa fa-comment"></i>
+            <div class="text">
+                <h4>{{grievances.length}}</h4>
+                <p>Grievances</p>
+            </div>
+        </div>
+    </div>
+    
+    
+</div>

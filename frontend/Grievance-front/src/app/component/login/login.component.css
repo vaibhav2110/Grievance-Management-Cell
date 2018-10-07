@@ -1,0 +1,107 @@
+.c_form{
+        margin-top: 25%;
+        width: 70%;
+        margin-left: 15%;
+        text-align: left;
+        display: block;
+        background-color: white;
+        box-shadow: 0px 22px 45px -15px rgba(0,0,0,0.5) !important;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+}
+.delay-3{
+    animation-delay: 0.2s;
+}
+.header{
+    text-align: center;
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    color: #949799;
+}
+h3{
+    font-size: 1.3em;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+form>div{
+    margin-bottom: 10px;
+}
+form>div>label{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+    color: #949799;
+}
+.reg{
+    margin-top: 5%;
+    font-size: 0.9em;
+    color: gray;
+}
+.reg>a{
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+.formControl {
+                        display: block;
+                        width: 100%;
+                        height: 34px;
+                        padding: 6px 12px;
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 14px;
+                        line-height: 1.42857143;
+                        color: #555;
+                        background-color: #fff;
+                        background-image: none;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+                        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                    }
+.formControl:focus{
+                        border-color: lightskyblue;
+                        box-shadow: inset 0 1px 1px rgba(0,0,256,.075);
+                        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                    }
+
+.error{
+            font-size: 0.8em;
+            padding: 0;
+            margin-top: 2px;
+            color: #f53d3d;
+            }
+
+.my_btn{
+    display: inline-block;
+    border: none;
+    text-align: center;
+    width: 100%;
+    background: #00b19d;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-top: 5%;
+}
+.loading{
+    display: inline-block;
+    border: none;
+    text-align: center;
+    width: 100%;
+    background: #00b19d;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-top: 5%;
+}
+            
+            
+    

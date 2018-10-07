@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3" (click)="toggleCollapsed()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+              <img class="logo" src="../../../assets/logo.png">
+              <div class="text">
+                  <span class="title"> Birla Institute of Technology, Mesra<br>Patna Campus<br>BV College, Near Patna Airport, Patna, Bihar 800014</span>
+              </div>
+            
+          </a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}" id="navbar-collapse-3">
+          <ul class="nav navbar-nav navbar-right">
+            <li (click)="openInbox($event)" class="link"><a><i class="fa fa-envelope"></i><span> Inbox<i id="badge" class="fa fa-circle"></i><p *ngIf="grievances" class="badge_text">{{responses.length}}</p></span></a></li>
+            <li (click)="openSent($event)" class="link"><a><i class="fa fa-paper-plane"></i><span> Sent<i id="badge" class="fa fa-circle"></i><p *ngIf="grievances" class="badge_text">{{grievances.length}}</p></span></a></li>
+            <li (click)="logout()">
+              <div class="nav-btn">LOG OUT</div>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+</div>
+<div class="content">
+<div class="animated fadeIn delay-3 c_form">
+        <div class="header">
+            <h3>POST GRIEVANCE</h3>
+        </div>
+        <form [formGroup]="grievanceForm" (ngSubmit)="onSubmit()">
+            <div>
+                <label>Subject</label>
+                <input class="formControl" type="text" formControlName="subject" placeholder="Enter Subject">
+            </div>
+            <div>
+                <label>Query/Complaint</label>
+                <textarea style="height: 100px" class="formControl" type="text" formControlName="message"></textarea>
+            </div>
+            <div>
+                <label>Branch</label>
+                <select class="formControl" formControlName="branch">
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="Mech">Mech</option>
+                    <option value="Civ">Civil</option>
+                    <option value="Prod">Production</option>
+                    <option value="EEE">EEE</option>
+                </select>
+            </div>
+            <button [disabled]="!grievanceForm.valid" *ngIf="!loading" class="my_btn" type="submit" >SUBMIT</button>
+            <button *ngIf="loading" class="my_btn" ><fa style="color: white" name="spinner" animation="spin"></fa> SUBMITTING...</button>
+        </form>
+    </div>
+</div>
+<div class="success">
+    <div class="trigger"></div>
+<svg *ngIf="success" version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+<path class="circ path" style="fill:none;stroke:#11998e;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" d="
+	M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"
+	/>
+<polyline class="tick path" style="fill:none;stroke:#11998e;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;" points="
+	11.6,20 15.9,24.2 26.4,13.8 "/>
+</svg>
+    <h1 style="opacity: 0">.</h1>
+</div>

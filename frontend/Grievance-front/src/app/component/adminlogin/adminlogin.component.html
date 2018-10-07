@@ -1,0 +1,21 @@
+<div class="container">
+<div class="animated fadeIn c_form">
+        <div class="header">
+            <h3>ADMIN LOG IN</h3>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div>
+                <label>Username</label>
+                <input class="formControl" type="text" formControlName="username" placeholder="Enter Username">
+                <p class="error" *ngIf="user_error">*{{errMess}}</p>
+            </div>
+            <div>
+                <label>Password</label>
+                <input class="formControl" type="password" formControlName="password" placeholder="Enter Password">
+                <p class="error" *ngIf="password_error">*{{errMess}}</p>
+            </div>
+            <button [disabled]="!loginForm.valid" *ngIf="!loading" class="my_btn" type="submit" >SUBMIT</button>
+            <button *ngIf="loading" class="loading" ><fa style="color: white" name="spinner" animation="spin"></fa> LOADING</button>
+        </form>
+    </div>
+</div>

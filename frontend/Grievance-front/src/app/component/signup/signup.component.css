@@ -1,0 +1,121 @@
+.delay-3{
+    
+}
+
+.c_form{
+        margin-top: 5%;
+        width: 60%;
+        margin-left: 20%;
+        text-align: left;
+        display: block;
+        background-color: white;
+        box-shadow: 0px 22px 45px -15px rgba(0,0,0,0.5) !important;
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    z-index: -999;
+}
+.header{
+    text-align: center;
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    color: #949799;
+}
+h3{
+    font-size: 1.3em;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+form>div{
+    margin-bottom: 10px;
+}
+form>div>label{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-size: 0.8em;
+    color: #949799;
+}
+
+.error{
+            font-size: 0.8em;
+            padding: 0;
+            margin-top: 2px;
+            color: #f53d3d;
+            }
+.formControl {
+                        display: block;
+                        width: 100%;
+                        height: 34px;
+                        padding: 6px 12px;
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 14px;
+                        line-height: 1.42857143;
+                        color: #555;
+                        background-color: #fff;
+                        background-image: none;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+                        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                    }
+.formControl:focus{
+                        border-color: lightskyblue;
+                        box-shadow: inset 0 1px 1px rgba(0,0,256,.075);
+                        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                    }
+
+.my_btn{
+    display: inline-block;
+    border: none;
+    text-align: center;
+    width: 100%;
+    background: #00b19d;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-top: 5%;
+}
+.success{
+    position: absolute;
+    left: 50%;
+    display: none;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    z-index: 999;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+}
+.circ{
+    opacity: 0;
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+.tick{
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    -webkit-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -moz-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -ms-transition: stroke-dashoffset 1s 0.5s ease-out;
+    -o-transition: stroke-dashoffset 1s 0.5s ease-out;
+    transition: stroke-dashoffset 1s 0.5s ease-out;
+}
+.drawn + svg .path{
+    opacity: 1;
+    stroke-dashoffset: 0;
+    transition: all 1s;
+}
+            
+            
+    

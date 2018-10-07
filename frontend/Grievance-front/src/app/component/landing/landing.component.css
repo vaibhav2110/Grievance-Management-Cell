@@ -1,0 +1,28 @@
+.container{
+    vertical-align: middle;
+    padding-top: 25px;
+}
+.content{
+    margin-top: 25%;
+}
+.content>h5{
+    color: white;
+    margin: 10px;
+    font-size: 1.2em !important;
+    font-family: Source Sans Pro, sans-serif;
+    
+}
+.content>h1{
+    color: white;
+    margin: 2px;
+    font-family: Source Sans Pro, sans-serif;
+}
+.delay-1{
+    animation-delay: 0.5s;
+}
+.delay-2{
+    animation-delay: 0.7s;
+}
+.delay-3{
+    animation-delay: 0.9s;
+}

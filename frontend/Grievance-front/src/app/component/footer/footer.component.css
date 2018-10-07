@@ -1,0 +1,22 @@
+.container-fluid{
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+}
+nav{
+    height: 30px;
+    border-radius: 0;
+    margin: 0;
+    background: transparent;
+}
+p{
+    color: white;
+    font-size: 0.8em;
+    font-weight: 150 !important;
+    position: relative;
+    top: 5px;
+}

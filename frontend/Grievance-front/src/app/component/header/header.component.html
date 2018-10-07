@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3" (click)="toggleCollapsed()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+              <img class="logo" src="../../../assets/logo.png">
+              <div class="text">
+                  <span class="title"> Birla Institute of Technology, Mesra<br>Patna Campus<br>BV College, Near Patna Airport, Patna, Bihar 800014</span>
+              </div>
+              
+          </a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}" id="navbar-collapse-3">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="link"><a href="#">About</a></li>
+            <li class="link"><a href="#">Contact</a></li>
+            <li>
+              <div (click)="openAdminLogin()" class="nav-btn">Admin Login</div>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+</div>

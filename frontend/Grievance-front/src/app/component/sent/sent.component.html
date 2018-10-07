@@ -1,0 +1,49 @@
+<div class="sent">
+<div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3" (click)="toggleCollapsed()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a (click)="backClicked()" class="back"><i class="fa fa-chevron-left icon"></i></a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}" id="navbar-collapse-3">
+          <ul class="nav navbar-nav navbar-right">
+              <li (click)="openInbox()" class="link"><a><i class="fa fa-envelope"></i><span> Inbox</span></a></li>
+            <li (click)="logout()">
+              <div class="nav-btn">LOG OUT</div>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+</div>
+<div *ngIf="!grievances" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+<!--<div class="container my">
+    <div *ngFor="let grievance of grievances" class="content">
+        <p>{{grievance.date | date:'medium' }}</p>
+        <h2>{{grievance.subject}}</h2>
+        <h4>{{grievance.message}}</h4>
+    </div>
+</div>-->
+    
+<section *ngIf="grievances" id="cd-timeline" class="cd-container">
+		<div *ngFor="let grievance of grievances" class="cd-timeline-block">
+			<div class="cd-timeline-img cd-movie">
+			</div> <!-- cd-timeline-img -->
+
+			<div class="cd-timeline-content">
+				<h2>{{grievance.subject}}</h2>
+				<p>{{grievance.message}}</p>
+				<span class="cd-date">{{grievance.date | date:'medium' }}</span>
+			</div> <!-- cd-timeline-content -->
+		</div> <!-- cd-timeline-block -->
+	</section>
+</div>
